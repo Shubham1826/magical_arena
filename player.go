@@ -46,3 +46,13 @@ func (p *Player) IsAlive() bool {
 func (p *Player) ToString() string {
   return fmt.Sprintf("%s [Health: %d, Strength: %d, Attack: %d]", p.Name, p.Health, p.Strength, p.Attack)
 }
+
+// CalculateAttackDamage calculates the damage dealt by the player during an attack.
+func (p *Player) CalculateAttackDamage(attackRoll int) int {
+  return p.Attack * attackRoll
+}
+
+// CalculateDefenseStrength calculates the defense strength of the player during defense.
+func (p *Player) CalculateDefenseStrength(defenseRoll int) int {
+  return p.Strength * defenseRoll
+}
